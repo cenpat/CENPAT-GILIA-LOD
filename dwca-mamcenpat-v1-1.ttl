@@ -1,0 +1,74 @@
+@prefix cnp: <http://crowd.fi.uncoma.edu.ar:3333/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix wdt: <http://wikidata.org/prop/direct/> .
+@prefix bio-onto: <http://cenpat-conicet.gob.ar/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dsw: <http://purl.org/dsw/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix txn: <http://lod.taxonconcept.org/ontology/txn.owl#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix geo-ont: <http://www.geonames.org/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geo-pos: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+
+
+<http://crowd.fi.uncoma.edu.ar:3333/occurrence/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> a dwc:Occurrence .
+
+<http://crowd.fi.uncoma.edu.ar:3333/taxon/Mirounga_leonina> a dwc:Taxon ;
+	dwc:class "Mammalia"^^xsd:string ;
+	dwc:family "Phocidae"^^xsd:string ;
+	dwc:genus "Mirounga"^^xsd:string ;
+	dwc:kingdom "Animalia"^^xsd:string ;
+	dwc:order "Carnivora"^^xsd:string ;
+	dwc:phylum "Chordata"^^xsd:string ;
+	dwc:scientificName "Mirounga leonina Linnaeus, 1758"^^xsd:string ;
+	dwc:scientificNameAuthorship "Linnaeus, 1758"^^xsd:string ;
+	dwc:specificEpithet "leonina"^^xsd:string ;
+	txn:scientificName "Mirounga leonina Linnaeus, 1758"^^xsd:string ;
+	txn:hasEOLPage "http://eol.org/pages/328639"^^xsd:string ;
+	txn:scientificNameWithAuthor "Mirounga leonina Linnaeus, 1758"^^xsd:string ;
+	rdfs:label "Mirounga leonina Linnaeus, 1758"@en .
+
+<http://crowd.fi.uncoma.edu.ar:3333/occurrence/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> dsw:toTaxon <http://crowd.fi.uncoma.edu.ar:3333/taxon/Mirounga_leonina> ;
+	dwc:basisOfRecord "PreservedSpecimen"^^xsd:string ;
+	dwc:catalogNumber "100751-1"^^xsd:string ;
+	dwc:collectionCode "Coleccíon de Ma"^^xsd:string ;
+	dwc:individualCount "1"^^xsd:int .
+
+<http://crowd.fi.uncoma.edu.ar:3333/agent/cenpat-conicet> a foaf:Agent ;
+	foaf:name "CENPAT-CONICET"@en .
+
+<http://crowd.fi.uncoma.edu.ar:3333/occurrence/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> dwc:institutionCode <http://crowd.fi.uncoma.edu.ar:3333/agent/cenpat-conicet> ;
+	dwc:occurrenceRemarks "craneo completo"^^xsd:string .
+
+<http://crowd.fi.uncoma.edu.ar:3333/agent/garca-n-svendsen-g-buren-a-hidalgo-fernando> a foaf:Agent ;
+	foaf:name "García N., Svendsen G., Buren A., Hidalgo Fernando@es"@en .
+
+<http://crowd.fi.uncoma.edu.ar:3333/occurrence/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> dsw:recBy <http://crowd.fi.uncoma.edu.ar:3333/agent/garca-n-svendsen-g-buren-a-hidalgo-fernando> ;
+	wdt:p21 wd:Q44148 .
+
+<http://crowd.fi.uncoma.edu.ar:3333/event/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> a dwc:Event .
+
+<http://crowd.fi.uncoma.edu.ar:3333/location/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> a dc:Location ;
+	dwc:georeferenceRemarks "Procede de Ermamíferosmarinos"^^xsd:string ;
+	dwc:locality "Playa del Barco Roca, Pla. Valdés"^^xsd:string ;
+	dwc:stateProvince "U"^^xsd:string ;
+	geo-pos:lat "-42.53"^^xsd:decimal ;
+	geo-pos:long "-63.6"^^xsd:decimal ;
+	geo-ont:countryCode "Argentina"^^xsd:string ;
+	owl:sameAs "http://dbpedia.org/resource/Argentina" .
+
+<http://crowd.fi.uncoma.edu.ar:3333/event/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> dsw:locatedAt <http://crowd.fi.uncoma.edu.ar:3333/location/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> ;
+	dwc:eventDate "22/10/2004 & 22/10/2004"^^xsd:string ;
+	dwc:verbatimEventDate "2004-10-22"^^xsd:date .
+
+<http://crowd.fi.uncoma.edu.ar:3333/occurrence/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> dsw:atEvent <http://crowd.fi.uncoma.edu.ar:3333/event/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> .
+
+<http://crowd.fi.uncoma.edu.ar:3333/dataset/dwca-mamcenpat-v1.1> a dwc:dataset .
+
+<http://crowd.fi.uncoma.edu.ar:3333/occurrence/f6bbf85d-85ea-4605-87fa-d81aca73a1cd> rdfs:label <http://crowd.fi.uncoma.edu.ar:3333/dataset/dwca-mamcenpat-v1.1> .
