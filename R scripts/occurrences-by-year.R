@@ -3,7 +3,7 @@ library(ggplot2) # package to show charts
 
 # Step 1 - Set up preliminaries and define query
 # Define the CENPAT-GILIA endpoint
-endpoint <- "http://166.82.4.230:7200/repositories/CENPAT-LOD"
+endpoint <- "http://crowd.fi.uncoma.edu.ar:3333/repositories/BIO_CNP_GILIA"
 
 # create query statement
 query <- "PREFIX dwc: <http://rs.tdwg.org/dwc/terms/>
