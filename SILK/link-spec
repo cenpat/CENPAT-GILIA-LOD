@@ -1,0 +1,50 @@
+<Silk>
+        <Prefixes>
+      <Prefix id="rdf" namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/><Prefix id="dbo" namespace="http://dbpedia.org/ontology/"/><Prefix id="dbp" namespace="http://dbpedia.org/property/"/><Prefix id="dwc" namespace="http://rs.tdwg.org/dwc/terms/"/><Prefix id="dbr" namespace="http://dbpedia.org/resource/"/><Prefix id="owl" namespace="http://www.w3.org/2002/07/owl#"/><Prefix id="rdfs" namespace="http://www.w3.org/2000/01/rdf-schema#"/>
+    </Prefixes>
+        <DataSources>
+          <Dataset id="crowd_repositori" type="file">
+            <Param name="file" value="statements.rdf"/><Param name="format" value="RDF/XML"/><Param name="graph" value=""/>
+          </Dataset><Dataset id="dbpedia" type="sparqlEndpoint">
+            <Param name="pageSize" value="1000"/><Param name="pauseTime" value="0"/><Param name="retryCount" value="3"/><Param name="endpointURI" value="http://dbpedia.org/sparql"/><Param name="retryPause" value="1000"/><Param name="graph" value=""/><Param name="queryParameters" value=""/><Param name="login" value=""/><Param name="useOrderBy" value="true"/><Param name="entityList" value=""/><Param name="parallel" value="true"/><Param name="password" value=""/>
+          </Dataset>
+        </DataSources>
+        <Interlinks>
+          <Interlink id="dbpedia_mapping">
+        <SourceDataset dataSource="crowd_repositori" var="a" typeUri="http://rs.tdwg.org/dwc/terms/Taxon">
+        <RestrictTo>
+          
+        </RestrictTo>
+      </SourceDataset>
+        <TargetDataset dataSource="dbpedia" var="b" typeUri="http://dbpedia.org/ontology/Mammal">
+        <RestrictTo>
+          ?a &lt;http://dbpedia.org/ontology/kingdom&gt; &lt;http://dbpedia.org/resource/Animal&gt; .
+        </RestrictTo>
+      </TargetDataset>
+        <LinkageRule linkType="owl:sameAs">
+        <Compare id="levenshteinDistance1" required="false" weight="1" metric="levenshteinDistance" threshold="0.0" indexing="true">
+            <TransformInput id="lowerCase1" function="lowerCase">
+            <TransformInput id="concat1" function="concat">
+            <Input id="target" path="/dwc:genus"/><Input id="targetPath" path="/dwc:specificEpithet"/>
+            <Param name="glue" value=" "/>
+          </TransformInput>
+            
+          </TransformInput><TransformInput id="lowerCase2" function="lowerCase">
+            <Input id="sourcePath1" path="/dbp:binomial"/>
+            
+          </TransformInput><Param name="minChar" value="0"/><Param name="maxChar" value="z"/>
+          </Compare>
+        <Filter/>
+      </LinkageRule>
+        <Outputs>
+          
+        </Outputs>
+      </Interlink>
+        </Interlinks>
+        <Transforms>
+          
+        </Transforms>
+        <Outputs>
+          
+        </Outputs>
+      </Silk>
