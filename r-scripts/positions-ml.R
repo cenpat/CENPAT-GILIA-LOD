@@ -31,4 +31,3 @@ argentineseamap <- get_map(location = "argentine sea", zoom=5, maptype = "satell
 g <- ggmap(argentineseamap) +geom_point(data = df, aes(x=long, y=lat), col="red",pch=20)
 
 print(g)
-
