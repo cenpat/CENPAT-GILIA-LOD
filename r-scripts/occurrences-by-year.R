@@ -25,3 +25,4 @@ df <- qd$results
 g <- ggplot(df, aes(year, count)) + geom_line() + xlab("Year") + ylab("Number of Occurrences")
 
 print(g)
+
